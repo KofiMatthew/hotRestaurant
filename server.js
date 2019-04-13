@@ -14,8 +14,9 @@ app.use(express.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var tables = [
-];
+var tables = [];
+
+var waitlist = [];
 
 // Routes
 // =============================================================
@@ -33,28 +34,18 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-/* // Displays all characters
-app.get("/api/characters", function(req, res) {
-  return res.json(characters);
-}); */
-
-// Displays a single character, or returns false
-app.get("/api/characters/:character", function(req, res) {
-  var chosen = req.params.character;
-
-  console.log(chosen);
-
-  for (var i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
-    }
-  }
-
-  return res.json(false);
+// Displays all tables
+app.get("/api/tables", function(req, res) {
+  return res.json(table_data); 
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function(req, res) {
+// Displays waitlist
+app.get("/api/waitlist", function(req, res) {
+  return res.json(waitlist); 
+});
+
+// Create New reservation - takes in JSON input
+app.post("/api/table_data", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newreservation = req.body;
@@ -65,7 +56,7 @@ app.post("/api/characters", function(req, res) {
 
   console.log(newreservation);
 
-  characters.push(newreservation);
+  tables.push(newreservation);
 
   res.json(newreservation);
 });
