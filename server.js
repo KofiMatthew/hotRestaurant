@@ -14,9 +14,15 @@ app.use(express.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var tables = [];
+var table_data = [{
+  name: "john",
+  phone: "123-456-7890",
+  email: "john@villageidiot.com",
+  uniqueid: "johnBoy"
+}];
 
 var waitlist = [];
+var counter = 0;
 
 // Routes
 // =============================================================
@@ -45,7 +51,7 @@ app.get("/api/waitlist", function(req, res) {
 });
 
 // Create New reservation - takes in JSON input
-app.post("/api/table_data", function(req, res) {
+app.post("/api/tables", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newReservation = req.body;
@@ -56,8 +62,11 @@ app.post("/api/table_data", function(req, res) {
 
   console.log(newReservation);
 
-  tables.push(newReservation);
-
+  if (counter < 5) {
+    table_data.push(newReservation);
+  } else {
+    waitlist.push(newReservation);
+  }
   res.json(newReservation);
 });
 
