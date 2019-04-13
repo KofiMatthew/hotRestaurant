@@ -79,31 +79,25 @@
     </div>
 
     <script type="text/javascript">
-      $("#search-btn").on("click", function() {
-        var searchedCharacter = $("#character-search").val().trim();
-  
-        // Using a RegEx Pattern to remove spaces from searchedCharacter
-        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-        searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-  
 
         function displayRes(){
           $.get("/api/table_data/", function(data) {
+            console.log(data);
             for (var i = 0; i < data.length; i++) {
               console.log(data[i]);
               var reservations = $("<li class = 'list-group-item'>");
               
-              listGroupItem.append($("<h1>").text(i+1));
-              listGroupItem.append($("<h2>").text(data[i].name));
-              listGroupItem.append($("<h2>").text(data[i].phone));
-              listGroupItem.append($("<h2>").text(data[i].email));
-              listGroupItem.append($("<h2>").text(data[i].uniqueid));
+              reservations.append($("<h1>").text(i+1));
+              reservations.append($("<h2>").text(data[i].name));
+              reservations.append($("<h2>").text(data[i].phone));
+              reservations.append($("<h2>").text(data[i].email));
+              reservations.append($("<h2>").text(data[i].uniqueid));
 
-              $("#table_list").append(listGroupItem);
+              $("#table_list").append(reservations);
             }            
           });
-        }
-      });
+        };
+        displayRes();
     </script>
 
   </body>
