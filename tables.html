@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>RKK Tables</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="text-center">
+          <span class="fa fa-fire"></span> Hot Restaurant
+        </h1>
+        <hr />
+        <h2 class="text-center">Current Reservations and Waiting List</h2>
+        <br />
+
+        <div class="text-center">
+          <a href="/reserve"
+            ><button class="btn btn-lg btn-danger">
+              <span class="fa fa-credit-card"></span> Make Reservation
+            </button></a
+          >
+          <a href="/"
+            ><button class="btn btn-lg btn-default">
+              <span class="fa fa-home"></span></button
+          ></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Current Tables in Use -->
+          <div class="card">
+            <div class="card-header">
+              <h4>Current Reservations</h4>
+            </div>
+            <div class="card-body">
+              <ul id="tableList" class="list-group">
+                <li class="list-group-item mt-4">
+                  <h2>Table #1</h2>
+                  <hr />
+                  <h2>ID: rmsl</h2>
+                  <h2>Name: Rusty</h2>
+                  <h2>Email: asdfjjaslkdfj@gmail.com</h2>
+                  <h2>Phone: 999-999-9999</h2>
+                </li>
+                <li class="list-group-item mt-4">
+                  <h2>Table #2</h2>
+                  <hr />
+                  <h2>ID:</h2>
+                  <h2>Name:</h2>
+                  <h2>Email:</h2>
+                  <h2>Phone:</h2>
+                </li>
+                <li class="list-group-item mt-4">
+                  <h2>Table #3</h2>
+                  <hr />
+                  <h2>ID: 4</h2>
+                  <h2>Name: Tyler Edge</h2>
+                  <h2>Email: tylercedge@gmail.com</h2>
+                  <h2>Phone: 8036275393</h2>
+                </li>
+                <li class="list-group-item mt-4">
+                  <h2>Table #4</h2>
+                  <hr />
+                  <h2>ID: asf;knasfbk</h2>
+                  <h2>Name: saljfn</h2>
+                  <h2>Email: asljbgab</h2>
+                  <h2>Phone: 5661</h2>
+                </li>
+                <li class="list-group-item mt-4">
+                  <h2>Table #5</h2>
+                  <hr />
+                  <h2>ID: 7</h2>
+                  <h2>Name: Pablo Escobar</h2>
+                  <h2>Email: GreenHouse@gmail.com</h2>
+                  <h2>Phone: 1-800-IMPORTS</h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Waiting List Card -->
+          <div class="card mt-4">
+            <div class="card-header">
+              <h4>Waiting List</h4>
+            </div>
+            <div class="card-body">
+              <ul id="waitList" class="list-group">
+                <li class="list-group-item mt-4">
+                  <h2></h2>
+                  <hr />
+                  <h2></h2>
+                  <h2></h2>
+                  <h2></h2>
+                  <h2></h2>
+                </li>
+                <li class="list-group-item mt-4">
+                  <h2></h2>
+                  <hr />
+                  <h2></h2>
+                  <h2></h2>
+                  <h2></h2>
+                  <h2></h2>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer mt-4">
+        <div class="container">
+          <p>Control Panel</p>
+          <p>
+            <a href="#" id="clear">Clear Table</a> |
+            <a href="/api/tables">API Table Link</a> |
+            <a href="/api/waitlist">API Wait List</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
